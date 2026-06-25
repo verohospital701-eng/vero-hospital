@@ -1,0 +1,84 @@
+<!--Navbar Start-->
+<nav class="navbar navbar-expand-md navbar-light" id="header">
+  <a href="/">
+    <img src="/assets/images/appointment.png" width="100" height="100" alt="logo">
+  </a>
+  <ul class="list-group list-group-horizontal-sm">
+    <li class="list-group-item">
+      <i class="fa fa-envelope"></i>
+      <span>info@thoronkav.com</span>
+    </li>
+    <li class="list-group-item">
+      <i class="fa fa-phone"></i>
+      <span>+23288479746</span>
+    </li>
+  </ul>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">ABOUT US</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownLogin" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          LOGIN
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownLogin">
+          <h6 class="dropdown-header">PATIENT</h6>
+          <a class="dropdown-item" href="/patientregistration">Register</a>
+          <a class="dropdown-item" href="/patientlogin">Login</a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">DOCTOR</h6>
+          <a class="dropdown-item" href="/doctorregistration">Register</a>
+          <a class="dropdown-item" href="/doctorlogin">Login</a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">AMBULANCE SERVICE</h6>
+          <a class="dropdown-item" href="/ambulanceregistration">Register</a>
+          <a class="dropdown-item" href="/ambulancelogin">Login</a>
+          <% if (data.user != undefined) { %>
+            <div class="dropdown-divider"></div>
+            <% if (data.user.usertype == "patient") { %>
+              <a class="dropdown-item" href="/patienthome">Dashboard</a>
+              <% } else if (data.user.usertype == "doctor") { %>
+                <a class="dropdown-item" href="/doctorhome">Dashboard</a>
+                <% } else if (data.user.usertype == "AmbulanceProvider") { %>
+                  <a class="dropdown-item" href="/ambulancehome">Dashboard</a>
+                  <% } %>
+            <a class="dropdown-item" href="/logout">Logout</a>
+            <% } %>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/faq">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/services">SERVICES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/gallery">GALLERY</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/news">NEWS</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--Navbar End-->
+
+<!--Banner Start-->
+<div class="banner-slider" style="background-image: url(/assets/images/banner.JPEG)">
+  <div class="bg"></div>
+  <div class="bannder-table">
+    <div class="banner-text">
+      <h1 id="typeit"> </h1>
+    </div>
+  </div>
+</div>
+<!--Banner End-->

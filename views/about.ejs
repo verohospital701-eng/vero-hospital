@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!--Meta Data-->
+    <%- include('partial/title.ejs'); %> 
+
+    <% if (data.NODE_ENV == 'production') { %>
+      <!-- Production Stylesheets -->
+      <link rel="stylesheet" href="assets/production/css/about.min.css">
+
+    <% }else { %>
+      <!-- Development Stylesheets -->
+      <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/lib/css/fontawesome.min.css">
+      <link rel="stylesheet" href="assets/lib/css/responsive.css">
+      <link rel="stylesheet" href="assets/lib/css/select2.min.css">
+      <link rel="stylesheet" href="assets/lib/css/spacing.css">
+      <link rel="stylesheet" href="assets/lib/css/style.css">
+      <link rel="stylesheet" href="assets/lib/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="assets/lib/css/bootstrap-datepicker.min.css">
+      <link rel="stylesheet" href="assets/lib/css/magnific-popup.css">
+      <link rel="stylesheet" href="assets/css/header.css">
+      
+    <% } %>
+  </head>
+
+  <body onLoad="typeWriter()">
+    <!--Header-->
+    <%- include('partial/header.ejs', {data: data }); %>
+    
+
+    <!--About Start-->
+    <div class="about-page pt_60 pb_30">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Our Mission</h3>
+            <p>To deliver exceptional, patient-centered healthcare services that are accessible, safe, and compassionate. We are dedicated to improving the health and well-being of our community by combining clinical excellence with cutting-edge medical technology. Our team of skilled professionals works collaboratively to provide personalized care that respects the dignity and unique needs of every patient.</p>
+
+            <p>We strive to enhance the quality of life through preventive care, accurate diagnosis, and effective treatment. By fostering a culture of continuous learning and innovation, we ensure that our patients receive the most advanced and evidence-based medical care available.</p>
+
+            <h3>Our Vision</h3>
+            <p>To be the leading healthcare provider recognized globally for excellence in patient care, medical research, and community wellness. We envision a future where healthcare is seamless, equitable, and integrated into the daily lives of the people we serve.</p>
+
+            <p>Through strategic partnerships and technological advancements, we aim to expand our reach and impact, setting new benchmarks in healthcare delivery. We are committed to building a healthier tomorrow where every individual has the opportunity to achieve their highest level of health and vitality.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--About End-->
+
+    <!--Footer-->
+    <%- include('partial/footer.ejs'); %>
+
+    <script>
+      var i = 0;
+      var txt = 'WELCOME TO VERO HOSPITAL MANAGEMENT SYSTEM';
+      var speed = 60;
+      function typeWriter() {
+        if (i < txt.length) {
+          document.getElementById("typeit").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+    </script>
+
+    <!-- JavaScript -->
+    <script defer src="assets/lib/js/jquery-3.4.1.min.js"></script>
+    <script defer src="/assets/lib/js/popper.min.js"></script>
+    <script defer src="assets/lib/js/bootstrap.bundle.min.js"></script>
+    <script defer src="assets/lib/js/all.min.js"></script>
+    <script defer src="assets/lib/js/select2.full.min.js"></script>
+    <script defer src="assets/js/about.js"></script>
+
+  </body>
+</html>
