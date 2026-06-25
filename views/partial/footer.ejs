@@ -113,6 +113,60 @@
 </div>
 <!--Footer End-->
 
+<!--WhatsApp Floating Button-->
+<a href="https://wa.me/23288479746?text=Hello%20Vero-Hospital%2C%20I%20came%20from%20your%20website.%20I%20need%20Help" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span>WhatsApp</span>
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 999px;
+    background: #25d366;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .whatsapp-float:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+    color: #fff;
+  }
+
+  .whatsapp-float i {
+    font-size: 22px;
+  }
+
+  @media (max-width: 576px) {
+    .whatsapp-float {
+      right: 12px;
+      bottom: 12px;
+      padding: 10px 14px;
+      font-size: 13px;
+    }
+
+    .whatsapp-float i {
+      font-size: 20px;
+    }
+
+    .whatsapp-float span {
+      display: none;
+    }
+  }
+</style>
+
 <!--Scroll-Top-->
 <div class="scroll-top" onclick="topFunction()">
   <i class="fa fa-angle-up"></i>

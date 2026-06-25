@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: vero-hospital
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URL_PRODUCTION
+        sync: false
